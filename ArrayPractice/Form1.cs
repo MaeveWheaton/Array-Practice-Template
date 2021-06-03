@@ -26,7 +26,7 @@ namespace ArrayPractice
 
             // variables that can be used to determine outcomes of questions
             int samePosition = 0;
-            int max;
+            int max = 0;
             double average;
             double sum = 0;
 
@@ -65,13 +65,14 @@ namespace ArrayPractice
                 reverseOutput.Text += $"{array1[i]} ";
             }
 
-            //5. Determine and display the largest value in array 1          
-
-            max = array1[0];
+            //5. Determine and display the largest value in array 1    
 
             for (int i = 1; i < array1.Length; i++)
             {
-                if (array1[i] > max) { max = array1[i]; }
+                if (array1[i] > max) 
+                { 
+                    max = array1[i]; 
+                }
             }
 
             maxOutput.Text = $"{max}";
@@ -98,21 +99,21 @@ namespace ArrayPractice
                 }
             }
 
-            evenOutput.Text = $"{sum}";
+            evenOutput.Text = sum + "";
 
             //8. Determine and display the number of 3s in array 1
 
-            sum = 0;
+            int numThrees = 0;
 
             for (int i = 0; i < array1.Length; i++)
             {
                 if (array1[i] == 3)
                 {
-                    sum++;
+                    numThrees++;
                 }
             }
 
-            threeOutput.Text = $"{sum}";
+            threeOutput.Text = numThrees + "";
 
             //9. Determine and display how many matching numbers in matching positions between the 2 arrays there are
 
@@ -124,7 +125,7 @@ namespace ArrayPractice
                 }
             }
 
-            matchOutput.Text = $"{samePosition}";
+            matchOutput.Text = samePosition + "";
 
             // ----------------------
             // ##### ENRICHMENT #####
@@ -153,6 +154,8 @@ namespace ArrayPractice
             array1 = array2;
             array2 = arrayTemp;
 
+            swap1Output.Text = "";
+            swap2Output.Text = "";
             for (int i = 0; i < array1.Length; i++)
             {
                 swap1Output.Text += $"{array1[i]} ";
